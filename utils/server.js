@@ -6,7 +6,14 @@ const Config = require('./config')
 class ApiServer {
     constructor() {
         this.server = http.createServer((req, res) => {
-            res.writeHead(200, {'Content-Type': 'application/json'})
+
+            let headers = {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET',
+                'Access-Control-Max-Age': 2592000,
+            }
+            res.writeHead(200, headers)
 
             let routes = this.getRoutes();
             let routePrefix = Config.getApiRoutePrefix()
@@ -22,9 +29,16 @@ class ApiServer {
     }
 
     handleResponse(res, route) {
-        let contentHeader = route.middleware.includes('web')
-                        ? {'Content-Type': 'text/html'}
-                        : {'Content-Type': 'application/json'};
+        let contentHeader = {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET',
+            'Access-Control-Max-Age': 2592000,
+        }
+
+        route.middleware.includes('web') ? 
+            contentHeader['Content-Type'] = 'text/html' :
+            contentHeader['Content-Type'] = 'application/json';
+
         res.writeHead(200, contentHeader)
         let body = route.middleware.includes('web')
             ? route.method().toString()

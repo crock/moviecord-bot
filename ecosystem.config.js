@@ -5,7 +5,7 @@ module.exports = {
      */
     apps : [
       {
-        name      : 'cc-bot',
+        name      : 'moviebot',
         script    : 'index.js',
         interpreter: 'node@10.16.0',
         env: {

@@ -55,12 +55,10 @@ function usual(message, args) {
 async function init(message, args) {
 
 	const sections = [
-		["server-information", "https://i.imgur.com/ULdJ9EH.png"],
-		["community-rules", "https://i.imgur.com/VgmjM84.png"],
-		["role-hierarchy", "https://i.imgur.com/8xRbLSb.png"],
-		["open-source", "https://i.imgur.com/MrkZ96M.png"],
-		["donate", "https://i.imgur.com/qyFYSY2.png"],
-		["server-invite", "https://i.imgur.com/lUXjLAu.png"]
+		["server-information", "https://i.imgur.com/PTXsHOX.png"],
+		["community-rules", "https://i.imgur.com/Z9Bq6zR.png"],
+		["role-hierarchy", "https://i.imgur.com/QaP9sCt.png"],
+		["server-invite", "https://i.imgur.com/WzlXYYE.png"]
 	];
 
 	// PROC: check if sectionals already exist, if not add them to database.

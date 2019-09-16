@@ -9,6 +9,6 @@ exports.run = (member) => {
    if (!channel) return;
 
    // Send the message, mentioning the member
-   channel.send(`Welcome to the server, ${member}`);
+   channel.send(`Welcome to MovieCord, ${member}!`);
     
 };

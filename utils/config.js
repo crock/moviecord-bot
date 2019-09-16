@@ -81,6 +81,10 @@ class Config {
     // return data.val().roles[roleType]
   }
 
+  getVerifyMessage() {
+    return this.config.verificationMessage;
+  }
+
   // Setters
 
   async setCommandPrefix(prefix) {
@@ -101,6 +105,11 @@ class Config {
     // this.config.roles[role_type] = id;
     // this.saveConfig();
     await DB.writeData(`config/roles/${role_type}`, id)
+    this.reload()
+  }
+
+  async setVerifyMessage(id) {
+    await DB.writeData('config/verificationMessage', id)
     this.reload()
   }
 }

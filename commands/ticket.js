@@ -10,7 +10,7 @@ exports.run = (message, args) => {
    try {
 
       const member_embed = new Discord.RichEmbed()
-      .setTitle("CodeCareer Assistance")
+      .setTitle("MovieCord Assistance")
       .setDescription(`You have requested personalized assistance. A CodeCareer staff member has been assigned to this request and will DM you within 24 hours. Please make sure to have your DM settings open to other server members.`)
       .addField("Request", request, false)
       .addField("Date of Request", message.createdAt, true);
@@ -20,7 +20,7 @@ exports.run = (message, args) => {
       const assignee = message.guild.roles.get(Config.getRole(role_type="admin")).members.random(1)
 
       const staff_embed = new Discord.RichEmbed()
-      .setTitle("CodeCareer Assistance")
+      .setTitle("MovieCord Assistance")
       .setDescription(`${message.author.toString()} has requested personalized assistance.`)
       .addField("Request", request, false)
       .addField("Assignee", `${assignee.toString()}`, true)

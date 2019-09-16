@@ -2,8 +2,7 @@ const Auth = require('../utils/auth')
 const Config = require('../utils/config')
 
 exports.run = (message, args) => {
-   
-   if (Auth.isOwner(message.member)) {
+   if (Auth.isAdmin(message.member)) {
         if (!args || args.length < 1) return
         
         let channelType = args[0].toLowerCase().trim()
@@ -15,7 +14,7 @@ exports.run = (message, args) => {
         message.reply("Config updated")
       
    } else {
-      message.reply('You must be the guild owner in order to run this command.');
+      message.reply('You must be the guild admin in order to run this command.');
    }
     
 };

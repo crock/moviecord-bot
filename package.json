@@ -1,11 +1,7 @@
 {
-  "name": "codecareer-discord-bot",
+  "name": "moviecord-bot",
   "version": "1.0.0",
-  "description": "CodeCareer Discord Bot",
   "main": "index.js",
-  "repository": "https://github.com/GitCodeCareer/discord-bot.git",
-  "author": "CodeCareer.org",
-  "license": "MIT",
   "private": true,
   "scripts": {
     "test": "nodemon --exec jest --silent",
